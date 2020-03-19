@@ -1,32 +1,37 @@
-package com.idealista.infrastructure.api;
+package com.idealista.infrastructure.api.viewmodel;
 
-import java.util.Date;
+import com.idealista.infrastructure.model.PictureVO;
+import com.idealista.infrastructure.services.typology.HouseTypology;
+
 import java.util.List;
 
-public class QualityAd {
+public class PublicAd {
 
-    private Integer id;
-    private String typology;
+    private String id;
+
+    private HouseTypology typology;
+
     private String description;
-    private List<String> pictureUrls;
-    private Integer houseSize;
-    private Integer gardenSize;
-    private Integer score;
-    private Date irrelevantSince;
 
-    public Integer getId() {
+    private List<PictureVO> pictureUrls;
+
+    private Integer houseSize;
+
+    private Integer gardenSize;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getTypology() {
+    public HouseTypology getTypology() {
         return typology;
     }
 
-    public void setTypology(String typology) {
+    public void setTypology(HouseTypology typology) {
         this.typology = typology;
     }
 
@@ -38,11 +43,11 @@ public class QualityAd {
         this.description = description;
     }
 
-    public List<String> getPictureUrls() {
+    public List<PictureVO> getPictureUrls() {
         return pictureUrls;
     }
 
-    public void setPictureUrls(List<String> pictureUrls) {
+    public void setPictureUrls(List<PictureVO> pictureUrls) {
         this.pictureUrls = pictureUrls;
     }
 
@@ -62,19 +67,4 @@ public class QualityAd {
         this.gardenSize = gardenSize;
     }
 
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
-
-    public Date getIrrelevantSince() {
-        return irrelevantSince;
-    }
-
-    public void setIrrelevantSince(Date irrelevantSince) {
-        this.irrelevantSince = irrelevantSince;
-    }
 }
