@@ -1,6 +1,11 @@
 # Reto: Servicio para gestión de calidad de los anuncios
 
 [![Build Status](https://travis-ci.org/idealista/coding-test-ranking.svg?branch=master)](https://travis-ci.org/idealista/coding-test-ranking)
+[![](https://img.shields.io/static/v1?label=MongoDB_Atlas&message=cluster0-shard-00-02-scpl9.mongodb.net:27017&color=blue)](https://www.mongodb.com/cloud)   
+
+## :gear: Ejecución del proyecto
+
+1. Ejecución en local atacando al cluster desplegado en MongoDB Atlas.
 
 Este repositorio contiene un API parcialmente desarrollada para desarrollar un servicio que se encargue de medir la calidad de los anuncios. Tu objetivo será implementar las historias de usuario que se describen más adelante.
 
