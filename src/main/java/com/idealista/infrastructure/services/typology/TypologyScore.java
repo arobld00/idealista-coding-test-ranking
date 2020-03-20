@@ -21,4 +21,6 @@ public abstract class TypologyScore extends HouseTypology implements Scoring, Co
 
     public abstract Integer getScoreByWords(Integer words);
 
+    public abstract boolean execute(AdVO ad);
+
 }
