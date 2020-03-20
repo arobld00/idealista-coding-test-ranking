@@ -33,11 +33,11 @@ public class FlatTypology extends TypologyScore {
 
     @Override
     public Integer getScoreByWords(Integer words) {
+        if (FlatTypology.FINITE_INTERVAL.includes(words)) {
+            return FlatTypology.FINITE_INTERVAL.getPoints();
+        }
         if (FlatTypology.CLOSED_INTERVAL.includes(words)) {
             return FlatTypology.CLOSED_INTERVAL.getPoints();
-        }
-        if (FINITE_INTERVAL.includes(words)) {
-            return FlatTypology.FINITE_INTERVAL.getPoints();
         }
         return TypologyScore.DEFAULT_SCORE;
     }
