@@ -1,6 +1,7 @@
 package com.idealista.infrastructure.services.typology;
 
 import com.idealista.infrastructure.model.AdVO;
+import com.idealista.infrastructure.services.analyzer.ScoreStatistics;
 import com.idealista.infrastructure.utils.ClosedInterval;
 import com.idealista.infrastructure.utils.ScoreInterval;
 
@@ -40,6 +41,11 @@ public class FlatTypology extends TypologyScore {
             return FlatTypology.CLOSED_INTERVAL.getPoints();
         }
         return TypologyScore.DEFAULT_SCORE;
+    }
+
+    @Override
+    public Integer accept(ScoreStatistics scoreStatistics) {
+        return scoreStatistics.visit(this);
     }
 
 }

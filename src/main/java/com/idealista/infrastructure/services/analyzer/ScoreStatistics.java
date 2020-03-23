@@ -1,5 +1,6 @@
 package com.idealista.infrastructure.services.analyzer;
 
+import com.idealista.infrastructure.services.typology.GarageTypology;
 import com.idealista.infrastructure.services.typology.HouseTypology;
 import com.idealista.infrastructure.services.typology.TypologyScore;
 import com.idealista.infrastructure.utils.ClosedInterval;
@@ -81,12 +82,15 @@ public class ScoreStatistics {
     }
 
     public Integer getDescriptionScore() {
-        Integer score = ScoreStatistics.DEFAULT_SCORE;
-        // smell code. WIP: solution Visitor pattern
-        if (typology instanceof TypologyScore) {
-            score = ((TypologyScore) typology).getScore(adVO.getDescription());
-        }
-        return score;
+        return typology.accept(this);
+    }
+
+    public Integer visit(TypologyScore typologyScore) {
+        return typologyScore.getScore(adVO.getDescription());
+    }
+
+    public Integer visit(GarageTypology garageTypology) {
+        return ScoreStatistics.DEFAULT_SCORE;
     }
 
 }
